@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block titulo %} TRUCO - {{ nombre | capfirst }} {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'truco/partida.css' %}">
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'truco/partida.js' %}"></script>
+{% endblock %}
+
+{% block contenido %}
+{% include template %}
+{% endblock %}

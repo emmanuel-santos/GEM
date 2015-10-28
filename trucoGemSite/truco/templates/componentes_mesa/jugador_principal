@@ -1,0 +1,23 @@
+<div class="carta row bot_mesa">
+{% include "componentes_mesa/cartas_en_mesa" with posicion='b' %}
+</div>
+<div id="mis_cartas" class="carta row">
+  <div class='col-xs-10 col-xs-offset-1'>
+  {% for carta in jugador.mano.cartas.all %}
+    <div class='col-xs-4'>
+      {% ifequal carta.jugada None %}
+        {% if jugador.toca_jugar %}
+          <a onclick="accion('{{ ident }}/{{ carta.id }}')">
+            <img  src="{{ carta.image }}">
+          </a>
+        {% else %}
+          <img src="{{ carta.image }}">
+        {% endif %}
+      {% else %}
+        <img class="invisible" src="{{ carta.image }}">
+      {% endifequal %}
+    </div>
+  {% endfor %}
+  </div>
+</div>
+{% include "componentes_mesa/nombre_jugador" %}

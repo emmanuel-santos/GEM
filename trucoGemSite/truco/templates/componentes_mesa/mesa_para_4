@@ -1,0 +1,36 @@
+{% ifnotequal error_message "no_error" %}
+<div class='col-md-4 col-md-offset-4'>
+  {{ error_message }}
+</div>
+{% else %}
+<div id="mesa" class='col-md-8 col-md-offset-1'>
+    <div class="col-md-6">
+      {% include "componentes_mesa/otro_jugador" with jugador=jugadores.2 posicion='t' %}
+    </div>
+    <div class="col-md-6">
+      {% include "componentes_mesa/otro_jugador" with jugador=jugadores.1 posicion='t' %}
+    </div>
+    <div class="row">
+    <div class="col-md-6 {% if jugadores.2.mostrar_cartas %}col-md-pull-6{% endif %}">
+      {% include "componentes_mesa/otro_jugador" with jugador=jugadores.3 posicion='b' %}
+    </div>
+    <div class="col-md-6">
+      {% include "componentes_mesa/jugador_principal" with jugador=jugadores.0 %}
+    </div>
+    </div>
+</div>
+<div id="sidebar" class="col-md-3">
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+  <p>
+  <a href="{{ ident }}/abandonar">
+       <button type="button" class="btn btn-warning btn-block">Abandonar partida</button>
+  </a>
+  </p>
+  <p>{% include "componentes_mesa/tabla_de_puntos"  with jugador=jugadores.0 %}</p>
+  <div id="botones" style="padding-bottom: 20px">
+    {% include "componentes_mesa/mensajes" with jugador=jugadores.0 %}
+    {% include "componentes_mesa/botonera" %}
+  </div>
+  </div>
+</div>
+{% endifnotequal %}

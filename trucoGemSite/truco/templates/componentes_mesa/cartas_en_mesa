@@ -1,0 +1,8 @@
+<div class='col-xs-10 col-xs-offset-1'>
+  <div class='col-xs-4 col-xs-offset-4'>
+    <img class="invisible" src="/static/truco/images/fondocarta.jpg">
+    {% for carta in jugador.jugadas %}
+        <img id="{{ posicion }}{{ carta.jugada }}" src="{{ carta.image }}">
+    {% endfor %}
+  </div>
+</div>

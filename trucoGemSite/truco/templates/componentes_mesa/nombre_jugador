@@ -1,0 +1,26 @@
+<div class="text-center">
+<a href="/user/{{ jugador.user.id }}">
+    {% if jugador.equipo.pares %}
+    <span class="text-danger">
+    {% else %}
+    <span class="text-info">
+    {% endif %}
+    <strong>{{jugador.user|capfirst}} </strong>
+    </span>
+</a>
+{% if jugador.posicion_en_mesa == ronda.mano %}
+    <span class="label label-success">Mano</span>
+{% endif %}
+{% if jugador.equipo.pie == jugador and jugador.partida.cantidad_jugadores != 2 %}
+    <span class="label label-primary">Pie</span>
+{% endif %}
+{% if jugador.partida.ultima_ronda.terminada %}
+{% if not jugador.visto %}
+    <span class="label label-warning">Toca jugar</span>
+{% endif %}
+{% else %}
+{% if ronda.turno_de == jugador.posicion_en_mesa %}
+    <span class="label label-warning">Toca jugar</span>
+{% endif %}
+{% endif %}
+</div>

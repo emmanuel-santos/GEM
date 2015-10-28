@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<div class='col-md-4 col-md-offset-4'>
+  <form action = "" method="post">
+    {% csrf_token %}
+    <div>
+    Usted se ha registrado correctamente. Gracias por usar <strong style="color:#D7DF01;font-size:20px">Truco </strong><strong style="color:blue;font-size:20px">Gem</strong><strong style="color:#6A0888;font-size:20px">▼</strong>.
+    </div>
+    <input type='submit' value="Regresar">
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+
+.navbar-brand {padding-top: 5px;}
+.navbar-brand img {
+    width: auto;
+    height: 35px;
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 30%;
+    -webkit-filter: opacity(.2);
+    filter: opacity(.2);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.errorlist {
+    color: red;
+    list-style-type: none;
+}
+
+form table {
+    width: 100%;
+}

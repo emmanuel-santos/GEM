@@ -1,0 +1,9 @@
+<div class='col-xs-10 col-xs-offset-1'>
+{% for carta in jugador.mano.cartas.all %}
+  <div class='col-xs-4'>
+    <img {% ifnotequal carta.jugada None %}class="invisible"{% endifnotequal %} 
+    src={% if jugador.mostrar_cartas %}{{ carta.image }}{% else %}"/static/truco/images/fondocarta.jpg"
+    {% endif %}>
+  </div>
+{% endfor %}
+</div>

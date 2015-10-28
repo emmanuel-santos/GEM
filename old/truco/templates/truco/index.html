@@ -1,0 +1,15 @@
+<html>
+<title> TRUCO </title>
+
+<body>
+    <truco action = "{% url 'jugar'} %" method="post    ">
+
+    {% csrf_token %}
+    {{ truco.as_p}}
+    <b>Nombre de usuario </b>
+    <input type = "text" size="15" maxlength= "30" name = "Nombre de usuario"/><br>
+    <FORM METHOD="POST" ACTION=""> {% csrf_token %} <INPUT TYPE="submit" VALUE="Jugar"> </FORM>
+
+<body>
+
+<html>

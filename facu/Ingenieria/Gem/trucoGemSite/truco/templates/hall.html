@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block script %}
+<script src="{% static 'truco/hall.js' %}"></script>
+{% endblock %}
+
+{% block contenido %}
+<div class='col-md-4 col-md-offset-4'>
+  <div>
+    <a href="nueva_sala">
+      <button type="button" class="btn btn-primary btn-lg btn-block">Crear una nueva sala</button>
+    </a>
+    {% if hay_salas %}
+      <br>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a onclick='cambiar_categoria(0)' id='categoria0'>Activas</a></li> 
+        <li><a onclick='cambiar_categoria(1)' id='categoria1'>Disponibles</a></li> 
+        <li><a onclick='cambiar_categoria(2)' id='categoria2'>Todas</a></li> 
+      </ul>
+      {% include "hall_content.html" %}
+    {% else %}
+      Todavia no hay salas. Crea una!
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+

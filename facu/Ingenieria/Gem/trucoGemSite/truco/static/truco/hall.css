@@ -1,0 +1,28 @@
+.nsala{
+    text-decoration: none;
+}
+
+.nsala:hover {
+    text-decoration: underline;
+    color:#FF0040;
+}
+
+.newsala{
+    color:#000000;
+    text-decoration: none;
+    
+}
+
+.newsala:hover {
+    text-decoration: underline;
+    color:#FF0040;
+}
+
+.table,td{
+    text-align:center;
+    width:20%;
+    border-radius: 8px;
+    border: solid 2px #6495ED;
+    background-color: #BCD2EE;
+}
+
